@@ -25,7 +25,7 @@ This project has been built using the following technologies:
 3. JavaScript
 
 ### Functionality in this project
-The user is able to see his/her account details once he/she inputs his/her card number and click on the `view button`.
+The user is able to see his/her account details once he/she inputs his/her card number and click on the `submit button`.
 
 The user is able to delete their account once they input their loyalty card number and click on the `delete button`.
 

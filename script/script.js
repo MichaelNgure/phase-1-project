@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // Selecting Dom Elements
     const inputsDiv = document.getElementById('inputs')
     const outputsDiv = document.getElementById('outputs')
-    const cardNumberInput = document.getElementById('cardNumber')
     const submitButton = document.getElementById('submit')
     const customerForm = document.getElementById('customerForm')
     const nameInput = document.getElementById('customerName')
@@ -20,14 +19,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
         
     }
 
-    // Keydown 
+    // Keydown event 
     function creatergb(){
         let number = Math.round(Math.random()*255 + 1)
         return number
     }
-    cardNumberInput.addEventListener('keydown', colors)
+    priceInput.addEventListener('keydown', colors)
     function colors(){
-        cardNumberInput.style.backgroundColor =  `rgb(${creatergb()}, ${creatergb()}, ${creatergb()})`
+        priceInput.style.backgroundColor =  `rgb(${creatergb()}, ${creatergb()}, ${creatergb()})`
     }
     const viewDiv = document.createElement('div')
     const pointsDiv = document.createElement('div')
@@ -42,22 +41,31 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const customers = await response.json()
         localStorage.setItem('customers', JSON.stringify(customers))
 
+        // Drop down menu
+        const selectBox = document.querySelector('select')
+        selectBox.textContent = ''
+        for (const customer of customers){
+            const option = document.createElement('option')
+            option.textContent = `${customer.name}`
+            selectBox.append(option)
+        }
         submitButton.addEventListener('click', great)
         function great(){
             for(let element of customers){
                 console.log(element.cardNumber)
-                if(Number(cardNumberInput.value) === element.cardNumber){
+                if(selectBox.value === element.name){
                     viewDiv.innerHTML = `
                     <h3> Account Details </h3>
                     <p> Name: <b> ${element.name} </b> </P>
                     <p> Id Number: <b> ${element.idNumber} </b> </P>
+                    <p> Card Number: <b> ${element.cardNumber} </b> </P>
                     <p> Points: <b> ${element.points} </b> </P>
                     <hr>
                     `
                     break
                 }else{
                     viewDiv.innerHTML = `
-                    <p id= 'errorParagraph' > Card Number <b>${cardNumberInput.value}</b> Not Found! <p>
+                    <p id= 'errorParagraph' > Card Number Not Found! <p> 
                     <hr>
                 `
             
@@ -108,7 +116,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         deleteButton.addEventListener('click', async ()=>{
             for(const customer of customers){
-                if(customer.cardNumber === Number(cardNumberInput.value)){
+                if(customer.name === selectBox.value){
                     deleteDiv.innerHTML = `
                     <p id='errorParagraph' > The account of <b>${customer.name}</b> has been deleted! </p>
                     <hr>
@@ -119,7 +127,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 }
             }
             outputsDiv.append(deleteDiv)
-
+            fetchData2()
         })
           
         
