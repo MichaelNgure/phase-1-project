@@ -1,0 +1,121 @@
+img {
+    float: left;
+}
+
+body {
+    background-color: rgba(165, 42, 42, 0.753);
+}
+h1{
+    color: green;
+    padding: 20px;
+}
+h2 {
+    font-family:'Times New Roman', Times, serif;
+}
+
+
+h3{
+    text-decoration: underline;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p, h3 {
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+div {
+    margin-top: 10px;
+}
+
+hr {
+    margin-left: 3px;
+}
+
+label {
+    padding: 3px;
+}
+input {
+    padding: 3px;
+    margin: 2px;
+}
+#div1 {
+    margin: auto;
+    width: 50%;
+    height: 0%;
+}
+#outputs {
+    border-left: 1px solid black;
+    height: 100%;
+    padding: 2px;
+}
+
+#errorParagraph {
+    color: yellow;
+    font-size: 18px;
+}
+
+#mainDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+button {
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px #999;
+}
+
+button:hover{
+    background-color: #3e8e41;
+}
+button:active{
+
+    background-color: #3e8e41;
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+}
+
+@media only screen and (max-width: 910px) {
+    #mainDiv {
+        display: inline;
+    }
+    #outputs {
+        border: none;
+        border-top: 1px solid white;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+  
+}
+
+@media only screen and (max-width: 600px) {
+    #outputs {
+        margin-bottom: 5px;
+    }
+    #inputs {
+        margin-top: 0;
+    }
+    h2 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 17px;
+    }
+    input,label {
+        display: block;
+    }
+    input {
+        margin-bottom: 5px;
+    }
+    
+}
+

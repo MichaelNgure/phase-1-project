@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Michael Njoroge">
+        <meta name="description" content="Loyalty Card">
+        <title>Loyalty Card</title>
+        <linK href="CSS/style.css" rel="stylesheet">
+        <script src="script/script.js" defer></script>
+    </head>
+    <body>
+        <div id="div1">
+            <img src="images/Custom-Loyalty-Cards-Designed-Printed.jpg" alt="loyalty card" width="150" >
+            <h1>Loyalty Card</h1>
+        </div>
+        <div id="mainDiv">
+            <div id="inputs">
+                <h2>To check account details or delete your account, enter your card number</h2>
+                <label for="cardNumber">Enter Card Number: </label>
+                <input id="cardNumber" type="number" placeholder="Enter your card number" required>
+                <button type="button" id="submit">Submit</button>
+                <button type="button" id="deleteCustomer">Delete</button>
+                <h2>To get a card number kindly key in your details below</h2>
+                <form id="customerForm">
+                    <input type="hidden" id="customerId">
+                    <input type="text" id="customerName" placeholder="Enter your name" required>
+                    <input type="number" id="idNumber" placeholder="Enter Id Number" required>
+                    <button type="submit">Save</button>
+                </form>
+                <h2>Put your card number and total price of items bought so that points may be added to your loyalty card</h2>
+                <label for="priceInput">Enter amount: </label>
+                <input type="number" id="priceInput" placeholder="Total Price">
+                <label for="cardNumber2">Card Number: </label>
+                <input type="number" id="cardNumber2" placeholder="Card Number">
+                <button type="button" id="pointsButton">Enter</button>
+            </div>
+            <div id="outputs">
+
+            </div>
+        </div>
+        
+    </body>
+</html>

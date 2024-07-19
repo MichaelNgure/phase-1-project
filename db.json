@@ -1,0 +1,25 @@
+{
+  "customers": [
+    {
+      "id": "1",
+      "name": "MICHAEL NJOROGE",
+      "idNumber": 23456,
+      "cardNumber": 400678,
+      "points": 400
+    },
+    {
+      "id": "2",
+      "name": "JOSEPH KAMAU",
+      "idNumber": 67890,
+      "cardNumber": 30084,
+      "points": 340
+    },
+    {
+      "id": "3",
+      "name": "JOYCE OUMA",
+      "idNumber": 423874,
+      "cardNumber": 546743,
+      "points": 600
+    }
+  ]
+}
